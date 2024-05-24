@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "90557388-4449-477b-978d-0182b9fae5be",
+		"name": "Hupso - Test Technique",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12396654"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Create account",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"karboul61@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login to account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fkarboul@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account identifier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTY0MDM3NjYsImV4cCI6MTcxNjQwNzM2Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZmthcmJvdWxAZ21haWwuY29tIn0.mgsxyWBr-5dy0mx9t8DCD50qpgwpzzcEAD7qDhR1l3WN305hrEtTkiaAMS8g4CfHE1Q3x3-CxUkbDVsGDgqZe7vHLJ4AvJ8BGkW1c-utRB1Jt7YnsMxEUTnXCvBFdyABLcCJ1ChRD1l8A39_dT3HAe03kkj_XIAtOsUT0FX3DDZNVLTrkfIFQ0AntTkYrNi9sCSMmwWr--mhsxICGwLV40pEQx8PL9zfSqk5b8mQ2TzASKYnrVqBN20zdY5aY6Ql-_5QRiVbkqb7jhtHhQUjyO-dLrmtRmTjCMe5CcPj5DgBw6_zTorKIuj9LRV4A6awuY5UE_1CpwkoA_GoabTimg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Filters",
+					"item": [
+						{
+							"name": "Get all categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/categories",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all publication years",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/years",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"years"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Little Prince\",\r\n    \"description\": \"The Little Prince (French: Le Petit Prince, pronounced [lə p(ə)ti pʁɛ̃s]) is a novella written and illustrated by French writer, and military pilot, Antoine de Saint-Exupéry. It was first published in English and French in the United States by Reynal & Hitchcock in April 1943 and was published posthumously in France following liberation; Saint-Exupéry's works had been banned by the Vichy Regime.\",\r\n    \"author\": \"Antoine de Saint-Exupéry\",\r\n    \"publishedAt\": \"1943-05-20\",\r\n    \"category\": \"Biographie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books?availability=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Biographie",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "The Little Prince",
+									"disabled": true
+								},
+								{
+									"key": "publishedYear",
+									"value": "2024",
+									"disabled": true
+								},
+								{
+									"key": "availability",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get book by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Loan book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTY0NjM1MDQsImV4cCI6MTcxNjQ2NzEwNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZmthcmJvdWxAZ21haWwuY29tIn0.Vnd_ffvEMLo5nONkLPE5g0g1G3BKQLJsc0Pyykkf21YAT9T2Me5jPpGnyWeRowJ0uUWiS9dtVGWMNrezb0qQJ1-VyifLJeIQQqIhwND4kmY-WgIyleRAx14wmAvhv6iEq3ypXS7wNFXB8MS308_lAEd_cDA83ASnraZycJ9iXVWfQf2u7aTwcNBjGRXGjVyfINYTaU8Qbv1kE28TpKXPZ_OVdO8GvJt_GS6yK9vaaTn3clka8eSv3MMmpgvdPw6VbR3rDdEKx6EjSewFErPkGFsaPaMcxyoauIW1AFt1F_zE9sWMdLz86ZU9MSzMsmVIIJDPaozv993YIfQaXthWSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 8,\r\n    \"startDate\": \"2024-06-09\",\r\n    \"endDate\": \"2024-06-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get bookings by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTY1NDU4MjEsImV4cCI6MTcxNjU0OTQyMSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZmthcmJvdWxAZ21haWwuY29tIn0.bklyfbSEwR8IXwImpjnw4icUBg6TxC-67iIS_7B0ntsdzfIJDNMGXCHn85V5MrYxexj1kIb2fLq_v3RlIdNkKbsIfuLH5_v_5TAP7iwSxHD0qeM7KIYpW9KrNo0AeHPf8ygpxzAcgkGKWDyqcB3FFd2BVpoXdlHjK22IPVuUeSDAES9VXgobc6bN4MERMmO_pdLoMxslUR4gdum3IX-ZzTY4uHWOCxA74sVSIFtxLS7dH3T9571sMzAKXg6yYnehZi-N8Fdf8LQxMD0AUAR3uHHtnIxH3VzVUGsyJQcKFFZ1rd4-8UgreB1PTZW6eNCuUQURqMLLfDWCGxS6ZgniNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel loan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTYzODIxMTUsImV4cCI6MTcxNjM4NTcxNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoia2FyYm91bEBnbWFpbC5jb20ifQ.js4ryXCkH5m75sn729AVRkuHvmBEd1YzT23VX5UbVr7IZw1FEV1Wp-tuDh-vvI07NuKET-w9iXkayElQaKs1GACAwUvQobpjhoKAX6RXRBJqEnu0XovlifuLrIF7dPhpVK-0GBaWtbtWyYGN2hqss-dGzJ1XPwApzduBnelUa8FIzeEEXyhfAs2ZFnRoT3yT3pV96E8Zzg-Dv_yvHoj_p5kBTM4dD7qB4qpIwFdhx8bzGfOw1jm5FBbN6RNkAE2uDnet38JCs6_AAJYMfMZLbuTVeX3KghyMAFMzXGAWWWanLXipetgOTpE2XysXl2KQ7llcfcBh6OWys9l-mg6uuw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bookings/2/status",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings",
+								"2",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Symfony ENV Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
